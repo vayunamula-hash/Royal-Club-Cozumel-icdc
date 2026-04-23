@@ -4,265 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Royal Beach Club Cozumel | Marketing Campaign</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --rc-navy: #00133A;
-            --rc-ocean: #0082C3;
-            --rc-yellow: #FFCC00;
-            --bg-light: #F4F8FA;
-            --text-dark: #333333;
-            --text-light: #FFFFFF;
+            /* Strict Royal Caribbean Brand Colors */
+            --primary-navy: #002244;
+            --primary-blue: #0077C8;
+            --accent-gold: #FFD100;
+            --bg-light: #F8F9FA;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --white: #FFFFFF;
         }
-        
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: var(--text-dark);
             background-color: var(--bg-light);
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.7;
         }
 
-        /* Navigation */
+        /* Modern Navbar */
         nav {
-            background-color: var(--rc-navy);
-            color: var(--text-light);
-            padding: 1.2rem 5%;
+            background: rgba(0, 34, 68, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .logo {
+        .brand {
+            color: var(--white);
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 800;
+            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--rc-yellow);
+            gap: 12px;
         }
 
-        .logo span {
-            color: var(--text-light);
+        .brand i {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--rc-yellow);
-        }
-
-        /* Hero Section */
-        header {
-            height: 80vh;
-            background: linear-gradient(rgba(0, 19, 58, 0.6), rgba(0, 130, 195, 0.4)), url('https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            color: var(--text-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        header h2 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        header p {
-            font-size: 1.5rem;
-            max-width: 800px;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .btn {
-            background-color: var(--rc-yellow);
-            color: var(--rc-navy);
-            padding: 15px 35px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
-        }
-
-        /* Sections Layout */
-        section {
-            padding: 80px 10%;
-        }
-
-        .bg-white {
-            background-color: #ffffff;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h3 {
-            color: var(--rc-navy);
-            font-size: 2.5rem;
-            display: inline-block;
-            position: relative;
-        }
-
-        .section-title h3::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 4px;
-            background-color: var(--rc-yellow);
-            bottom: -10px;
-            left: 25%;
-        }
-
-        /* Flex & Grid Systems */
-        .flex-container {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .flex-item {
-            flex: 1;
-        }
-
-        .flex-item img {
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
-        /* Image Cards */
-        .card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-            border: 1px solid #eaeaea;
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        nav a:hover {
+            color: var(--accent-gold);
         }
 
-        .card-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 4px solid var(--rc-ocean);
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card h4 {
-            color: var(--rc-navy);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        /* Data Callouts */
-        .stats-container {
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(to right, rgba(0, 34, 68, 0.9), rgba(0, 119, 200, 0.4)), url('https://images.unsplash.com/photo-1599839619722-39751411ea63?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
             display: flex;
-            justify-content: space-around;
-            background: var(--rc-navy);
-            color: white;
-            padding: 50px 20px;
-            border-radius: 15px;
-            margin-top: 40px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            align-items: center;
+            padding: 0 10%;
         }
 
-        .stat-box h2 {
-            font-size: 3.5rem;
-            color: var(--rc-yellow);
+        .hero-content {
+            max-width: 800px;
+            color: var(--white);
+            transform: translateY(20px);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--primary-navy);
+            padding: 16px 40px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Standard Section */
+        section {
+            padding: 120px 10%;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            max-width: 600px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .section-header .line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        /* Split Layout (Alternating) */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .split-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 34, 68, 0.1);
+        }
+
+        .split-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .split-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Modern Grid Cards */
+        .bg-white {
+            background: var(--white);
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .modern-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modern-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-blue);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .modern-card:hover {
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(0, 34, 68, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .modern-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .modern-card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+        }
+
+        .modern-card h4 {
+            font-size: 1.3rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .modern-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Impact Section (Stats) */
+        .impact-section {
+            background: var(--primary-navy);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 10%;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .stat-item h2 {
+            font-size: 4rem;
+            color: var(--accent-gold);
+            font-weight: 800;
             margin-bottom: 10px;
         }
 
-        .stat-box p {
-            font-size: 1.2rem;
+        .stat-item p {
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.8);
         }
 
         /* Footer */
         footer {
-            background-color: var(--text-dark);
-            color: var(--text-light);
+            background: #00132A;
+            color: rgba(255,255,255,0.6);
+            padding: 40px 10%;
             text-align: center;
-            padding: 40px 20px;
+            font-size: 0.9rem;
         }
 
-        footer p {
-            margin: 5px 0;
-            color: #aaaaaa;
-        }
-
-        .team-names {
-            font-size: 1.2rem;
-            color: var(--rc-yellow);
-            font-weight: bold;
+        .team-sig {
+            color: var(--white);
+            font-weight: 600;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .flex-container {
-                flex-direction: column;
+        @media (max-width: 900px) {
+            .split-section {
+                grid-template-columns: 1fr;
             }
-            header h2 {
-                font-size: 2.5rem;
+            .hero h1 {
+                font-size: 3.5rem;
             }
-            .stats-container {
-                flex-direction: column;
-                gap: 30px;
+            .impact-grid {
+                grid-template-columns: 1fr;
             }
             nav ul {
-                display: none; /* simple mobile view */
+                display: none;
             }
         }
     </style>
@@ -270,142 +311,112 @@
 <body>
 
     <nav>
-        <div class="logo">
+        <div class="brand">
             <i class="fa-solid fa-anchor"></i>
-            <span>Royal Beach Club</span> Cozumel
+            ROYAL CARIBBEAN
         </div>
         <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#campaign">Campaign</a></li>
-            <li><a href="#budget">Budget & ROI</a></li>
+            <li><a href="#vision">The Vision</a></li>
+            <li><a href="#strategy">Campaign Strategy</a></li>
+            <li><a href="#impact">Financial Impact</a></li>
         </ul>
     </nav>
 
-    <header>
-        <h2>Sea The Future</h2>
-        <p>An elite integrated marketing campaign positioning Cozumel as the ultimate signature highlight of the Royal Caribbean journey.</p>
-        <a href="#overview" class="btn">Explore the Strategy</a>
-    </header>
-
-    <section id="overview">
-        <div class="section-title">
-            <h3>The Destination & Objective</h3>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Sea The <span>Future</span></h1>
+            <p>An elite, integrated marketing campaign positioning the Royal Beach Club Cozumel as the ultimate signature highlight of the modern cruise journey.</p>
+            <a href="#vision" class="btn">Explore the Strategy</a>
         </div>
-        <div class="flex-container">
-            <div class="flex-item">
-                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luxury Beach Resort">
+    </div>
+
+    <section id="vision">
+        <div class="split-section">
+            <div class="split-text">
+                <div class="section-header">
+                    <h2>A Seamless Transition</h2>
+                    <div class="line"></div>
+                </div>
+                <h3>Elevating the Shore Experience</h3>
+                <p>Royal Beach Club Cozumel is a luxury, all-inclusive destination designed exclusively for cruise guests. We are extending the onboard luxury experience directly to the shore with private beaches, swim-up bars, upscale dining, and premium cabanas.</p>
+                <p>Our strategy targets luxury-focused travelers and families, turning a standard port stop into a must-book destination, driving awareness up by 30% and bookings by 25%.</p>
             </div>
-            <div class="flex-item">
-                <h4 style="color: var(--rc-ocean); font-size: 1.8rem; margin-bottom: 15px;">A Seamless Cruise-to-Shore Transition</h4>
-                <p style="font-size: 1.1rem; margin-bottom: 20px;">Royal Beach Club Cozumel is a luxury, all-inclusive beach destination exclusively for cruise guests. It extends the onboard luxury experience with private beaches, swim-up bars, upscale dining, premium cabanas, curated activities, and live entertainment.</p>
-                
-                <h4 style="color: var(--rc-navy); font-size: 1.3rem; margin-bottom: 10px;"><i class="fa-solid fa-bullseye" style="color: var(--rc-yellow);"></i> Campaign Goals:</h4>
-                <ul style="list-style-position: inside; font-size: 1.1rem; margin-bottom: 20px;">
-                    <li>Boost awareness by <strong>30%</strong> and bookings by <strong>25%</strong> in 45 days.</li>
-                    <li>Engage <strong>100,000+</strong> potential customers via digital channels.</li>
-                    <li>Position the beach club as a high-value, limited-time upgrade.</li>
-                </ul>
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Luxury Beach Club">
             </div>
         </div>
     </section>
 
-    <section id="campaign" class="bg-white">
-        <div class="section-title">
-            <h3>Campaign Activities</h3>
-        </div>
-        <div class="grid-3">
-            
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1518605368461-1ee7e16a22f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>FIFA World Cup Global Promotion</h4>
-                    <p>Highlighting Royal Beach Club Cozumel during the world's most-watched sporting event with $1M in broadcast ads and digital screens in major transit hubs.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>The Weeknd Tour Partnership</h4>
-                    <p>A star-powered endorsement placing the Beach Club at the center of global pop culture. Generates massive buzz and builds immediate credibility among trend-driven travelers.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>Influencer Cruise Experience</h4>
-                    <p>Collaborating with 10-15 top-tier creators for authentic, first-person storytelling. Features interactive content, TikTok reels, and cross-platform giveaways.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>Celebrity Endorsements</h4>
-                    <p>Leveraging A-list talent including Selena Gomez, Zendaya, Kevin Hart, and Johnny Depp to showcase premium dining, cinematic luxury, and high-energy beach club vibes.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>Interactive Guest Polling</h4>
-                    <p>Gamifying the cruise experience. Guests use the Royal Caribbean app to vote on daily activities like DJ parties, steel drums, and dining themes, shaping their own vacation.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="card-content">
-                    <h4>Promotional Incentives</h4>
-                    <p>Strategic, cost-effective bundling that pairs Beach Club access with popular cruise add-ons to drive conversion, lower hesitation, and increase overall booking revenue.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="budget">
-        <div class="section-title">
-            <h3>Budget & Financial Impact</h3>
+    <section id="strategy" class="bg-white">
+        <div class="section-header">
+            <h2>Campaign Activities</h2>
+            <div class="line"></div>
         </div>
         
-        <div class="flex-container">
-            <div class="flex-item">
-                <h4 style="color: var(--rc-ocean); font-size: 1.5rem; margin-bottom: 15px;">Data-Driven Allocation</h4>
-                <ul style="font-size: 1.1rem; list-style: none; padding: 0;">
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-chart-pie" style="color: var(--rc-yellow); margin-right: 10px;"></i> <strong>Social Media & Influencers:</strong> $2,020,000 (39.3%)</li>
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-chart-pie" style="color: var(--rc-yellow); margin-right: 10px;"></i> <strong>Consumer Services & Endorsements:</strong> $1,725,000 (33.5%)</li>
-                    <li style="margin-bottom: 15px;"><i class="fa-solid fa-chart-pie" style="color: var(--rc-yellow); margin-right: 10px;"></i> <strong>FIFA World Cup Promotion:</strong> $1,400,000 (27.2%)</li>
-                    <li style="margin-bottom: 15px; border-top: 2px solid #ccc; padding-top: 10px;"><strong>Total Campaign Budget:</strong> $5,145,000</li>
-                </ul>
+        <div class="grid-cards">
+            <div class="modern-card">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h4>Global World Cup Promo</h4>
+                <p>Capitalizing on the world's most-watched sporting event with $1M in broadcast ads and digital screens in major international transit hubs to drive maximum visibility.</p>
             </div>
-            <div class="flex-item">
-                 <p style="font-size: 1.1rem;">Our strategy focuses on culturally relevant endorsements, experiential marketing, and global visibility to significantly increase bookings and overall profitability, driving substantial onboarding and island spending.</p>
+
+            <div class="modern-card">
+                <i class="fa-solid fa-music"></i>
+                <h4>The Weeknd Tour Integration</h4>
+                <p>A $500K star-powered partnership that places the Beach Club at the center of global pop culture, converting massive buzz into direct bookings.</p>
+            </div>
+
+            <div class="modern-card">
+                <i class="fa-solid fa-camera-retro"></i>
+                <h4>Influencer Cruise Experience</h4>
+                <p>Collaborating with 10-15 top-tier creators for authentic, first-person storytelling, featuring interactive TikTok reels and highly engaging cross-platform giveaways.</p>
+            </div>
+
+            <div class="modern-card">
+                <i class="fa-solid fa-star"></i>
+                <h4>A-List Endorsements</h4>
+                <p>Leveraging premium talent including Selena Gomez, Zendaya, Kevin Hart, and Johnny Depp to showcase diverse experiences from cinematic luxury to high-energy vibes.</p>
+            </div>
+
+            <div class="modern-card">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h4>Interactive Guest Polling</h4>
+                <p>Gamifying the vacation experience. Guests use the mobile app to vote on daily activities, actively shaping their own beach club environment.</p>
+            </div>
+
+            <div class="modern-card">
+                <i class="fa-solid fa-ticket"></i>
+                <h4>Promotional Bundling</h4>
+                <p>A strategic, cost-effective add-on methodology that pairs Beach Club access with popular cruise packages to lower hesitation and drive overall cart value.</p>
             </div>
         </div>
+    </section>
 
-        <div class="stats-container">
-            <div class="stat-box">
+    <section id="impact" class="impact-section">
+        <div class="section-header" style="margin: 0 auto;">
+            <h2 style="color: var(--white);">Financial Projections</h2>
+            <div class="line" style="margin: 0 auto;"></div>
+        </div>
+        
+        <div class="impact-grid">
+            <div class="stat-item">
+                <h2>$5.1M</h2>
+                <p>Total Budget</p>
+            </div>
+            <div class="stat-item">
                 <h2>$18M</h2>
                 <p>Estimated Revenue</p>
             </div>
-            <div class="stat-box">
+            <div class="stat-item">
                 <h2>250%</h2>
                 <p>Projected ROI</p>
-            </div>
-            <div class="stat-box">
-                <h2>$12.6M</h2>
-                <p>From Ticket Sales</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="team-names">Abhiram Ganapathinedi | Svanik Vadiyala | Vayun Amula</div>
+        <div class="team-sig">Vayun Amula | Svanik Vadiyala | Abhiram Ganapathinedi</div>
         <p>Integrated Marketing Campaign - Service</p>
-        <p>DECA ICDC Presentation</p>
     </footer>
 
 </body>
